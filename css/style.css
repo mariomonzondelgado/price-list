@@ -85,12 +85,12 @@ body {
 
 .product-name {
   text-align: left; /* Alinea el texto a la izquierda */
-  font-weight: bold; /* Resalta el nombre del producto */
 }
 
 .product-price {
   text-align: right; /* Alinea el precio a la derecha */
   color: #ff6f61; /* Color destacado para el precio */
+  font-weight: bold; /* Resalta el precio del producto */
 }
 
 .product-list li:last-child {
