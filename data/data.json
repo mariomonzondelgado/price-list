@@ -110,7 +110,6 @@
         "name": "SEMIFRIOS Y ECLER",
         "prices": [
           { "id": 87, "name": "Amarena", "price": 3.8 },
-          { "id": 87, "name": "Amarena", "price": 3.8 },
           { "id": 88, "name": "Barrita Chocolate-Caramelo", "price": 3.8 },
           { "id": 89, "name": "Barrita Fruta", "price": 3.8 },
           { "id": 90, "name": "Barrita Tiramisú", "price": 3.8 },
