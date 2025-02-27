@@ -15,6 +15,10 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     .catch(error => {
       console.error("Error:", error);
+      const errorMessage = document.createElement("p");
+      errorMessage.textContent = "Ocurrió un error al cargar los datos. Por favor, inténtalo más tarde.";
+      errorMessage.style.color = "red";
+      document.body.appendChild(errorMessage);
     });
 });
 
@@ -31,6 +35,10 @@ function generateCategoryButtons() {
       });
       categoryButtonsContainer.appendChild(button);
     });
+  }
+  if (!data || !data.categories) {
+    console.error("Los datos de categorías no están disponibles.");
+    return;
   }
 }
 

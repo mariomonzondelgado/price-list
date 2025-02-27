@@ -77,7 +77,10 @@ body {
 }
 
 .product-list li {
-  display: contents; /* Hace que los elementos <li> no ocupen espacio, solo sus hijos */
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
 }
 
 .product-name {
