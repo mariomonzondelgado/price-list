@@ -1,93 +1,97 @@
 /* Reset básico */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
-    color: #333;
-    line-height: 1.6;
-  }
-  
-  .header {
-    text-align: center;
-    padding: 20px;
-    background-color: #61f2ff;
-    color: #ff6f61;
-  }
-  
-    .logo {
-      width: 200px; /* Ajusta el ancho según sea necesario */
-      height: auto; /* Mantén la proporción */
-    }
-    
-    /* Si usas la opción 2 (SVG inline) */
-    .logo svg {
-      fill: #ff6f61; /* Cambia el color del logo */
-    }
-  
-  .container {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  .category-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
-  }
-  
-  .category-buttons button {
-    padding: 10px 20px;
-    background-color: #ff6f61;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .category-buttons button:hover {
-    background-color: #e55c52;
-  }
-  
-  .product-list {
-    list-style: none;
-  }
-  
-  .product-list li {
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
-    font-size: large;
-  }
-  
-  .product-list li:last-child {
-    border-bottom: none;
-  }
-  
-  .back-button {
-    display: inline-block;
-    margin: 20px;
-    text-decoration: none;
-    color: #000000;
-    font-weight: bold;
-  }
-  
-  .footer {
-    text-align: center;
-    font-weight: bold;
-    padding: 10px;
-    background-color: #61f2ff;
-    color: #ff6f61;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+  display: flex; /* Aplicamos Flexbox al body */
+  flex-direction: column; /* Colocamos los elementos en columna */
+  min-height: 100vh; /* Aseguramos que el body ocupe toda la altura de la ventana */
+}
+
+.header {
+  display: flex; /* Usamos Flexbox para centrar el contenido */
+  align-items: center; /* Centra verticalmente */
+  justify-content: center; /* Centra horizontalmente */
+  flex-direction: column; /* Apilamos el logo y el título */
+  padding: 20px;
+  background-color: #61f2ff;
+  color: #ff6f61;
+}
+
+.logo {
+  width: 200px; /* Ajusta el ancho según sea necesario */
+  height: auto; /* Mantén la proporción */
+}
+
+/* Si usas la opción 2 (SVG inline) */
+.logo svg {
+  fill: #ff6f61; /* Cambia el color del logo */
+}
+
+.container {
+  flex: 1; /* El contenedor principal crecerá para ocupar el espacio disponible */
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.category-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.category-buttons button {
+  padding: 10px 20px;
+  background-color: #ff6f61;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.category-buttons button:hover {
+  background-color: #e55c52;
+}
+
+.product-list {
+  list-style: none;
+}
+
+.product-list li {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  font-size: large;
+}
+
+.product-list li:last-child {
+  border-bottom: none;
+}
+
+.back-button {
+  display: inline-block;
+  margin: 20px;
+  text-decoration: none;
+  color: #000000;
+  font-weight: bold;
+}
+
+.footer {
+  text-align: center;
+  font-weight: bold;
+  padding: 10px;
+  background-color: #61f2ff;
+  color: #ff6f61;
+}
