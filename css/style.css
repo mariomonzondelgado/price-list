@@ -20,10 +20,15 @@
   }
   
   .logo {
-    width: 100px;
-    height: auto;
-    margin-bottom: 10px;
-  }
+    .logo {
+      width: 200px; /* Ajusta el ancho según sea necesario */
+      height: auto; /* Mantén la proporción */
+    }
+    
+    /* Si usas la opción 2 (SVG inline) */
+    .logo svg {
+      fill: #ff6f61; /* Cambia el color del logo */
+    }
   
   .container {
     max-width: 800px;
