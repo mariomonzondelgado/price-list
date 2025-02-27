@@ -24,22 +24,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Función para generar botones de categorías
 function generateCategoryButtons() {
-  const categoryButtonsContainer = document.querySelector(".category-buttons");
-
-  if (data && data.categories) {
-    data.categories.forEach(category => {
-      const button = document.createElement("button");
-      button.textContent = category.name;
-      button.addEventListener("click", () => {
-        navigateToCategory(category);
-      });
-      categoryButtonsContainer.appendChild(button);
-    });
-  }
   if (!data || !data.categories) {
     console.error("Los datos de categorías no están disponibles.");
     return;
   }
+
+  const categoryButtonsContainer = document.querySelector(".category-buttons");
+
+  data.categories.forEach(category => {
+    const button = document.createElement("button");
+    button.textContent = category.name;
+    button.style.margin = "5px";
+    button.style.padding = "10px";
+    button.style.backgroundColor = "#ff6f61";
+    button.style.color = "white";
+    button.style.border = "none";
+    button.style.borderRadius = "5px";
+    button.style.cursor = "pointer";
+
+    button.addEventListener("click", () => {
+      navigateToCategory(category);
+    });
+
+    categoryButtonsContainer.appendChild(button);
+  });
 }
 
 // Función para navegar a la página de categoría
@@ -59,29 +67,35 @@ if (window.location.pathname.includes("pages/category.html")) {
     const categoryTitle = document.getElementById("category-title");
     const productList = document.getElementById("product-list");
 
-    if (selectedCategory) {
-      categoryTitle.textContent = selectedCategory.name;
-
-      selectedCategory.prices.forEach(product => {
-        const listItem = document.createElement("li");
-
-        // Nombre del producto
-        const productName = document.createElement("span");
-        productName.className = "product-name";
-        productName.textContent = product.name;
-
-        // Precio del producto
-        const productPrice = document.createElement("span");
-        productPrice.className = "product-price";
-        productPrice.textContent = `${product.price.toFixed(2)} €`;
-
-        // Agrega los elementos al <li>
-        listItem.appendChild(productName);
-        listItem.appendChild(productPrice);
-
-        // Agrega el <li> a la lista
-        productList.appendChild(listItem);
-      });
+    if (!selectedCategory) {
+      const errorMessage = document.createElement("p");
+      errorMessage.textContent = "No se ha seleccionado ninguna categoría.";
+      errorMessage.style.color = "red";
+      document.body.appendChild(errorMessage);
+      return;
     }
+
+    categoryTitle.textContent = selectedCategory.name;
+
+    selectedCategory.prices.forEach(product => {
+      const listItem = document.createElement("li");
+
+      // Nombre del producto
+      const productName = document.createElement("span");
+      productName.className = "product-name";
+      productName.textContent = product.name;
+
+      // Precio del producto
+      const productPrice = document.createElement("span");
+      productPrice.className = "product-price";
+      productPrice.textContent = `${product.price.toFixed(2)} €`;
+
+      // Agrega los elementos al <li>
+      listItem.appendChild(productName);
+      listItem.appendChild(productPrice);
+
+      // Agrega el <li> a la lista
+      productList.appendChild(listItem);
+    });
   });
 }
