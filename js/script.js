@@ -56,7 +56,22 @@ if (window.location.pathname.includes("pages/category.html")) {
 
       selectedCategory.prices.forEach(product => {
         const listItem = document.createElement("li");
-        listItem.textContent = `${product.name} - ${product.price.toFixed(2)} €`;
+
+        // Nombre del producto
+        const productName = document.createElement("span");
+        productName.className = "product-name";
+        productName.textContent = product.name;
+
+        // Precio del producto
+        const productPrice = document.createElement("span");
+        productPrice.className = "product-price";
+        productPrice.textContent = `${product.price.toFixed(2)} €`;
+
+        // Agrega los elementos al <li>
+        listItem.appendChild(productName);
+        listItem.appendChild(productPrice);
+
+        // Agrega el <li> a la lista
         productList.appendChild(listItem);
       });
     }
